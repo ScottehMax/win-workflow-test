@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: windows-2022
     steps:
-      - run: echo $prefix
+      - run: echo ${{ env.prefix }}
         shell: powershell
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
@@ -54,7 +54,7 @@ jobs:
         run: .\buildtbb.ps1
         shell: powershell
 
-      - run: cmake --install . --prefix $prefix
+      - run: cmake --install . --prefix ${{ env.prefix }}
         shell: powershell
 
       - name: Cache pagmo
