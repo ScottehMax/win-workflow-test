@@ -35,8 +35,34 @@ jobs:
       # - run: vcpkg install pagmo2
 
       - uses: actions/checkout@v4
-      - name: Build
-        run: .\build.ps1
+
+      - run: $prefix = $( ${{ github.workspace }}  + "\libs" )
+        shell: powershell
+
+      - name: Cache TBB
+        id: cache-tbb
+        uses: actions/cache@v4
+        with:
+          path: oneTBB
+          key: tbb-cache
+
+      - name: Build TBB
+        if: steps.cache-tbb.outputs.cache-hit != 'true'
+        run: .\buildtbb.ps1
+        shell: powershell
+
+      - run: cmake --install . --prefix $prefix
+
+      - name: Cache pagmo
+        id: cache-pagmo
+        uses: actions/cache@v4
+        with:
+          path: pagmo2
+          key: pagmo-cache
+
+      - name: Build pagmo
+        if: steps.cache-pagmo.outputs.cache-hit != 'true'
+        run: .\pagmo.ps1
         shell: powershell
 
       - run: cmake --version
