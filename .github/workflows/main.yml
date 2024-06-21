@@ -1,10 +1,16 @@
 name: build-pygmo
 run-name: ${{ github.actor }} - test setup for building pygmo
+env:
+  prefix: "${{ github.workspace }}\libs"
+
+
 on: [push]
 jobs:
   test:
     runs-on: windows-2022
     steps:
+      - run: echo $prefix
+        shell: powershell
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
       - name: Install boost
@@ -35,9 +41,6 @@ jobs:
       # - run: vcpkg install pagmo2
 
       - uses: actions/checkout@v4
-
-      - run: $prefix = "${{ github.workspace }}\libs"
-        shell: powershell
 
       - name: Cache TBB
         id: cache-tbb
