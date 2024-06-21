@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} - test setup for building pygmo
 on: [push]
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
       - uses: actions/checkout@v2
       - name: Add msbuild to PATH
@@ -17,7 +17,7 @@ jobs:
             # https://github.com/MarkusJx/prebuilt-boost/blob/main/versions-manifest.json
             boost_version: 1.84.0
             # OPTIONAL: Specify a custon install location
-            boost_install_dir: C:\
+            # boost_install_dir: C:\
             # OPTIONAL: Specify a platform version
             platform_version: 2022
             # OPTIONAL: Specify a toolset
@@ -29,10 +29,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12.4' 
-      - name: run-vcpkg
-        uses: lukka/run-vcpkg@v11.5
-      - run: vcpkg install pagmo2
-      - name: CMake Action
-        uses: threeal/cmake-action@v1.3.0
+      # - name: setup cmake
+        # uses: lukka/get-cmake@latest
+      # - name: run-vcpkg
+        # uses: lukka/run-vcpkg@v11.5
+      # - run: vcpkg install pagmo2
+
+      - name: Build
+        run: .\build.ps1
+        shell: powershell
+
       - run: cmake --version
       - run: echo Hello world!
