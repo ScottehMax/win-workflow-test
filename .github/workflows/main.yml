@@ -36,7 +36,7 @@ jobs:
 
       - uses: actions/checkout@v4
 
-      - run: $prefix = $( ${{ github.workspace }}  + "\libs" )
+      - run: $prefix = "${{ github.workspace }}\libs"
         shell: powershell
 
       - name: Cache TBB
