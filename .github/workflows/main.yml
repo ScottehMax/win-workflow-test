@@ -54,7 +54,7 @@ jobs:
         run: .\buildtbb.ps1
         shell: powershell
 
-      - run: cmake --install . --prefix ${{ env.prefix }}
+      - run: cmake --install ./oneTBB/build --prefix ${{ env.prefix }}
         shell: powershell
 
       - name: Cache pagmo
