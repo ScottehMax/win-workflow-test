@@ -58,9 +58,9 @@ jobs:
       - run: cmake --install ./oneTBB/build --prefix ${{ env.prefix }}
         shell: powershell
 
-      - name: download eigen3
-        run: .\extract-eigen.ps1
-        shell: powershell
+      # - name: download eigen3
+      #   run: .\extract-eigen.ps1
+      #   shell: powershell
 
       # - name: Cache pagmo
       #   id: cache-pagmo
