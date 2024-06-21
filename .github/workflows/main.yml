@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} - test setup for building pygmo
 on: [push]
 jobs:
   test:
-    runs-on: windows-2019
+    runs-on: windows-2022
     steps:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2

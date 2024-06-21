@@ -1,9 +1,9 @@
 # get tbb
-$prefix = "C:\libs"
+# $prefix = "C:\libs"
 git clone https://github.com/oneapi-src/oneTBB.git
 cd oneTBB
 cmake --build . 
-cmake --install $prefix
+cmake --install
 
 # Install pagmo.
 git clone https://github.com/esa/pagmo2.git
@@ -12,9 +12,9 @@ mkdir build
 cd build
 
 cmake `
-    -G "Visual Studio 16 2019" -A x64 `
-    -DCMAKE_PREFIX_PATH=$prefix `
-    -DCMAKE_INSTALL_PREFIX=$prefix `
+    -G "Visual Studio 17 2022" -A x64 `
+    -DCMAKE_PREFIX_PATH="C:\Program Files" `
+    -DCMAKE_INSTALL_PREFIX="C:\Program Files" `
     -DBoost_NO_BOOST_CMAKE=ON `
     -DPAGMO_WITH_EIGEN3=ON `
     -DPAGMO_WITH_IPOPT=ON `
