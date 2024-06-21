@@ -55,6 +55,7 @@ jobs:
         shell: powershell
 
       - run: cmake --install . --prefix $prefix
+        shell: powershell
 
       - name: Cache pagmo
         id: cache-pagmo
