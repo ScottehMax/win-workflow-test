@@ -59,20 +59,20 @@ jobs:
         shell: powershell
 
       - name: download eigen3
-        run: extract-eigen.ps1
+        run: .\extract-eigen.ps1
         shell: powershell
 
-      - name: Cache pagmo
-        id: cache-pagmo
-        uses: actions/cache@v4
-        with:
-          path: pagmo2
-          key: pagmo-cache
+      # - name: Cache pagmo
+      #   id: cache-pagmo
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: pagmo2
+      #     key: pagmo-cache
 
-      - name: Build pagmo
-        if: steps.cache-pagmo.outputs.cache-hit != 'true'
-        run: .\buildpagmo.ps1
-        shell: powershell
+      # - name: Build pagmo
+      #   if: steps.cache-pagmo.outputs.cache-hit != 'true'
+      #   run: .\buildpagmo.ps1
+      #   shell: powershell
 
       - run: cmake --version
       - run: echo Hello world!
