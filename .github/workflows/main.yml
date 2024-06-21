@@ -2,6 +2,7 @@ name: build-pygmo
 run-name: ${{ github.actor }} - test setup for building pygmo
 env:
   prefix: "${{ github.workspace }}/libs"
+  TBB_ROOT: "${{ github.workspace }}/libs"
 
 
 on: [push]
