@@ -1,5 +1,5 @@
 # get tbb
-prefix = "C:\libs"
+$prefix = "C:\libs"
 git clone https://github.com/oneapi-src/oneTBB.git
 cd oneTBB
 cmake --build . 
