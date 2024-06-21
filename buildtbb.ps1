@@ -1,5 +1,5 @@
 # get tbb
-cd ${{ github.workspace }}
+cd $Env:GITHUB_WORKSPACE
 git clone https://github.com/oneapi-src/oneTBB.git
 cd oneTBB
 mkdir build

@@ -1,5 +1,5 @@
 # Install pagmo.
-cd ${{ github.workspace }}
+cd $Env:GITHUB_WORKSPACE
 git clone https://github.com/esa/pagmo2.git
 cd pagmo2
 mkdir build
