@@ -1,7 +1,7 @@
 name: build-pygmo
 run-name: ${{ github.actor }} - test setup for building pygmo
 env:
-  prefix: "${{ github.workspace }}\libs"
+  prefix: "${{ github.workspace }}/libs"
 
 
 on: [push]
