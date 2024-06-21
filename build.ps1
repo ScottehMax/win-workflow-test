@@ -2,6 +2,7 @@
 $prefix = "C:\libs"
 git clone https://github.com/oneapi-src/oneTBB.git
 cd oneTBB
+cmake -G "Visual Studio 17 2022" .
 cmake --build . 
 cmake --install . --prefix $prefix
 
