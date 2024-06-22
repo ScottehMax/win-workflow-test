@@ -11,9 +11,8 @@ cmake `
     -DCMAKE_INSTALL_PREFIX=$prefix `
     -DBoost_NO_BOOST_CMAKE=ON `
     -DPAGMO_WITH_EIGEN3=ON `
-    -DPAGMO_WITH_IPOPT=ON `
+    -DPAGMO_WITH_IPOPT=OFF `
     -DPAGMO_WITH_NLOPT=ON `
-    -DPAGMO_ENABLE_IPO=ON `
     ..
 
 cmake --build . --config Release --target install
