@@ -58,7 +58,15 @@ jobs:
       - run: cmake --install ./oneTBB/build --prefix ${{ env.prefix }}
         shell: powershell
 
-      - name: download eigen3
+      - name: Cache Eigen3
+        id: cache-eigen3
+        uses: actions/cache@v4
+        with:
+          path: C:/eigen-3.4.0
+          key: eigen3-cache
+
+      - name: Download Eigen3
+        if: steps.cache-eigen3.outputs.cache-hit != 'true'
         run: .\extract-eigen.ps1
         shell: powershell
 
