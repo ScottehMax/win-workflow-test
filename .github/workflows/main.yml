@@ -63,7 +63,7 @@ jobs:
         id: cache-eigen3
         uses: actions/cache@v4
         with:
-          path: eigen
+          path: eigen-3.4.0
           key: eigen3-cache
 
       - name: Download Eigen3
