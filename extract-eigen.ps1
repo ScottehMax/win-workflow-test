@@ -8,10 +8,10 @@ cd build
 
 cmake `
     -G "Visual Studio 17 2022" -A x64 `
-    -DCMAKE_PREFIX_PATH=$Env:prefix `
-    -DCMAKE_INSTALL_PREFIX=$Env:prefix `
+    -DCMAKE_PREFIX_PATH="$prefix" `
+    -DCMAKE_INSTALL_PREFIX="$prefix" `
     -DCMAKE_CXX_FLAGS="/MP" `
     -DCMAKE_BUILD_TYPE=Release `
     ..
 
-cmake --build . --config Release --target INSTALL
+cmake --build . --config Release --target install

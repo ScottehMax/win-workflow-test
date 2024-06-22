@@ -70,7 +70,7 @@ jobs:
         run: .\extract-eigen.ps1
         shell: powershell
 
-      - run: cmake --install ./eigen/Eigen/build --prefix ${{ env.prefix }}
+      - run: cmake --install ./eigen/build --prefix ${{ env.prefix }}
         shell: powershell
 
       - name: Cache pagmo
