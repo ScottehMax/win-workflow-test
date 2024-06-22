@@ -3,8 +3,7 @@ run-name: ${{ github.actor }} - test setup for building pygmo
 env:
   prefix: "${{ github.workspace }}/libs"
   TBB_ROOT: "${{ github.workspace }}/libs"
-  Eigen3_DIR: C:/eigen-3.4.0
-
+  Eigen3_DIR: "${{ github.workspace }}/libs"
 
 on: [push]
 jobs:
