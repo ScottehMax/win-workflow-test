@@ -66,11 +66,12 @@ jobs:
           path: eigen
           key: eigen3-cache
 
-      - run: cmake --install ./eigen/Eigen/build --prefix ${{ env.prefix }}
-
       - name: Download Eigen3
         # if: steps.cache-eigen3.outputs.cache-hit != 'true'
         run: .\extract-eigen.ps1
+        shell: powershell
+
+      - run: cmake --install ./eigen/Eigen/build --prefix ${{ env.prefix }}
         shell: powershell
 
       - name: Cache pagmo
