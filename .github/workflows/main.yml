@@ -4,6 +4,7 @@ env:
   prefix: "${{ github.workspace }}/libs"
   TBB_ROOT: "${{ github.workspace }}/libs"
   Eigen3_DIR: "${{ github.workspace }}/libs"
+  NLopt_DIR: "${{ github.workspace }}/libs"
 
 on: [push]
 jobs:
@@ -70,7 +71,7 @@ jobs:
         run: .\buildnlopt.ps1
         shell: powershell
 
-      - run: ls nlopt
+      - run: cmake --install ./nlopt/build --prefix ${{ env.prefix }}
 
       - name: Install Eigen3
         uses: kupns-aka-kupa/setup-eigen3@master
