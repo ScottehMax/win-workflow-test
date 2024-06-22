@@ -70,6 +70,8 @@ jobs:
         run: .\buildnlopt.ps1
         shell: powershell
 
+      - run: ls nlopt
+
       - name: Install Eigen3
         uses: kupns-aka-kupa/setup-eigen3@master
         with:
