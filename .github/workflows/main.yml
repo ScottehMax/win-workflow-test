@@ -80,6 +80,10 @@ jobs:
         env:
           CMAKE_GENERATOR: "Visual Studio 17 2022"
 
+      - name: Install ipopt
+        run: buildipopt.sh
+        shell: bash
+
       - name: Cache pagmo
         id: cache-pagmo
         uses: actions/cache@v4
