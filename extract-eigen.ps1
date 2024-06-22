@@ -2,7 +2,7 @@ cd $Env:GITHUB_WORKSPACE
 wget https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz -OutFile eigen-3.4.0.tar.gz
 tar -xvzf eigen-3.4.0.tar.gz eigen
 
-cd eigen/Eigen
+cd eigen
 mkdir build
 cd build
 
@@ -12,5 +12,6 @@ cmake `
     -DCMAKE_INSTALL_PREFIX=$prefix `
     -DCMAKE_CXX_FLAGS="/MP" `
     -DCMAKE_BUILD_TYPE=Release `
+    ..
 
 cmake --build . --config Release --target INSTALL
