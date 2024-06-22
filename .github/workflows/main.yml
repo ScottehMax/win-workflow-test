@@ -58,6 +58,18 @@ jobs:
       - run: cmake --install ./oneTBB/build --prefix ${{ env.prefix }}
         shell: powershell
 
+      - name: Cache nlopt
+        id: cache-nlopt
+        uses: actions/cache@v4
+        with:
+          path: nlopt
+          key: nlopt-cache
+
+      - name: Get nlopt
+        if: steps.cache-nlopt.outputs.cache-hit != 'true'
+        run: .\buildnlopt.ps1
+        shell: powershell
+
       - name: Install Eigen3
         uses: kupns-aka-kupa/setup-eigen3@master
         with:
