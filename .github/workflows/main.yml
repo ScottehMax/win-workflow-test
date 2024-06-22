@@ -5,8 +5,7 @@ env:
   TBB_ROOT: "${{ github.workspace }}/libs"
   Eigen3_DIR: "${{ github.workspace }}/libs"
   NLopt_DIR: "${{ github.workspace }}/libs"
-  IPOPT_INCLUDE_DIR: "${{ github.workspace }}/Ipopt/include"
-  IPOPT_LIBRARY: "${{ github.workspace }}/Ipopt/lib"
+  CMAKE_LIBRARY_PATH: "${{ github.workspace }}"
 
 on: [push]
 jobs:
