@@ -63,8 +63,10 @@ jobs:
         id: cache-eigen3
         uses: actions/cache@v4
         with:
-          path: C:/eigen-3.4.0
+          path: eigen
           key: eigen3-cache
+
+      - run: cmake --install ./eigen/build --prefix ${{ env.prefix }}
 
       - name: Download Eigen3
         # if: steps.cache-eigen3.outputs.cache-hit != 'true'
