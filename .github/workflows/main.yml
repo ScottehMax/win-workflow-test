@@ -74,8 +74,8 @@ jobs:
       - run: cmake --install ./nlopt/build --prefix ${{ env.prefix }}
 
       - name: Install ipopt
-        run: ./buildipopt.sh
-        shell: bash
+        run: ./extract-ipopt.ps1
+        shell: powershell
 
       - name: Install Eigen3
         uses: kupns-aka-kupa/setup-eigen3@master
