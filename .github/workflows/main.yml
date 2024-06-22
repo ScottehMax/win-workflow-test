@@ -58,20 +58,12 @@ jobs:
       - run: cmake --install ./oneTBB/build --prefix ${{ env.prefix }}
         shell: powershell
 
-      - name: Cache Eigen3
-        id: cache-eigen3
-        uses: actions/cache@v4
+      - name: Install Eigen3
+        uses: kupns-aka-kupa/setup-eigen3@v1
         with:
-          path: eigen-3.4.0
-          key: eigen3-cache
-
-      - name: Download Eigen3
-        # if: steps.cache-eigen3.outputs.cache-hit != 'true'
-        run: .\extract-eigen.ps1
-        shell: powershell
-
-      - run: cmake --install ./eigen/build --prefix ${{ env.prefix }}
-        shell: powershell
+          version: 3.4.0
+        env:
+          CMAKE_GENERATOR: "Visual Studio 17 2022"
 
       - name: Cache pagmo
         id: cache-pagmo
