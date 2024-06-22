@@ -73,16 +73,16 @@ jobs:
 
       - run: cmake --install ./nlopt/build --prefix ${{ env.prefix }}
 
+      - name: Install ipopt
+        run: ./buildipopt.sh
+        shell: bash
+
       - name: Install Eigen3
         uses: kupns-aka-kupa/setup-eigen3@master
         with:
           version: 3.4.0
         env:
           CMAKE_GENERATOR: "Visual Studio 17 2022"
-
-      - name: Install ipopt
-        run: buildipopt.sh
-        shell: bash
 
       - name: Cache pagmo
         id: cache-pagmo
