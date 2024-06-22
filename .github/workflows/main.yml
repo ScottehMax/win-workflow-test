@@ -67,7 +67,7 @@ jobs:
           key: eigen3-cache
 
       - name: Download Eigen3
-        if: steps.cache-eigen3.outputs.cache-hit != 'true'
+        # if: steps.cache-eigen3.outputs.cache-hit != 'true'
         run: .\extract-eigen.ps1
         shell: powershell
 
