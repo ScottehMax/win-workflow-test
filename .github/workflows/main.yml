@@ -2,9 +2,9 @@ name: build-pygmo
 run-name: ${{ github.actor }} - test setup for building pygmo
 env:
   prefix: "${{ github.workspace }}/libs"
-  TBB_ROOT: "${{ github.workspace }}/libs"
+  TBB_ROOT: "${{ github.workspace }}/oneTBB"
   Eigen3_DIR: "${{ github.workspace }}/libs"
-  NLopt_DIR: "${{ github.workspace }}/libs"
+  NLopt_DIR: "${{ github.workspace }}/nlopt"
   CMAKE_LIBRARY_PATH: "${{ github.workspace }}"
 
 on: [push]
